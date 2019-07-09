@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "700079779432",
+    "firebase_url": "https://mcourseinfs3605.firebaseio.com",
+    "project_id": "mcourseinfs3605",
+    "storage_bucket": "mcourseinfs3605.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700079779432:android:35920b6445bc2955",
+        "android_client_info": {
+          "package_name": "com.example.mcourse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700079779432-68463tjukak34k2a3a3be6c5c296e6dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk55iSSSWXfdtp14zOsbem-GnK9oxmjFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700079779432-68463tjukak34k2a3a3be6c5c296e6dn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
