@@ -30,7 +30,7 @@ public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeVi
     @Override
     public void onBindViewHolder(degreeViewHolder holder, int position) {
         holder.name.setText(degreeList.get(position).getName());
-        holder.shortDescription.setText(degreeList.get(position).getCode());
+
     }
 
     @Override
@@ -40,12 +40,12 @@ public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeVi
 
     public class degreeViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
-        public TextView shortDescription;
+
 
         public degreeViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.degree_name);
-            shortDescription = (TextView) view.findViewById(R.id.degree_code);
+
         }
     }
 
