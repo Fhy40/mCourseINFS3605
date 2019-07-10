@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         signup_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                goAccountCreation();
+                goDegreeSelection();
             }
         });
 
@@ -79,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goProfilePage() {
         Intent intent = new Intent(this, user_profile.class);
+        startActivity(intent);
+    }
+
+    public void goDegreeSelection() {
+        Intent intent = new Intent(this, degree_selection.class);
         startActivity(intent);
     }
 
