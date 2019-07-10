@@ -6,4 +6,105 @@
     android:layout_height="match_parent"
     tools:context=".user_profile">
 
+    <ImageView
+        android:id="@+id/profile_picture_imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/userpic" />
+
+    <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:text="Johny Johnson"
+        app:layout_constraintStart_toEndOf="@+id/profile_picture_imageview"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/degree_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:text="Bachelor of Information Systems"
+        app:layout_constraintStart_toEndOf="@+id/profile_picture_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/name_textview" />
+
+    <TextView
+        android:id="@+id/connection_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:text="See 193 Connections"
+        app:layout_constraintStart_toEndOf="@+id/profile_picture_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/degree_textview" />
+
+    <ProgressBar
+        android:id="@+id/progress_percentage_circle"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="159dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_textview" />
+
+    <TextView
+        android:id="@+id/progress_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
+        android:text="Progress:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_picture_imageview" />
+
+    <TextView
+        android:id="@+id/progress_percentage_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="176dp"
+        android:text="70%"
+        app:layout_constraintStart_toEndOf="@+id/progress_percentage_circle"
+        app:layout_constraintTop_toBottomOf="@+id/connection_textview" />
+
+    <TextView
+        android:id="@+id/achievements_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="Achievements:"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_percentage_circle" />
+
+    <TextView
+        android:id="@+id/certificate_one_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="BA SAS Certificate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/achievements_textview" />
+
+    <TextView
+        android:id="@+id/certificate_two_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text=" Events Commitee (PIAA)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/certificate_one_textview" />
 </androidx.constraintlayout.widget.ConstraintLayout>

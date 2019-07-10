@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("arjun", "signInWithEmail:success");
                                     FirebaseUser user = auth.getCurrentUser();
+                                    Log.d("arjun", "current user_id =" + user.toString());
+                                    goProfilePage();
                                     updateUI(user);
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -72,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goAccountCreation() {
         Intent intent = new Intent(this, account_creation.class);
+        startActivity(intent);
+    }
+
+    public void goProfilePage() {
+        Intent intent = new Intent(this, user_profile.class);
         startActivity(intent);
     }
 
