@@ -14,5 +14,5 @@ import com.example.mcourse.degree.degree_adapter;
 import java.util.List;
 
 public class career_adapter{
-    
+
 }
