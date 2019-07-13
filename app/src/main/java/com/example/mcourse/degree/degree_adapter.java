@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mcourse.R;
@@ -43,6 +42,7 @@ public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeVi
     public class degreeViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
         public TextView name;
         OnDegreeListener onDegreeListener;
+        private boolean isDegreeSelected = false;
 
         public degreeViewHolder(View view, OnDegreeListener onDegreeListener) {
             super(view);
@@ -55,9 +55,21 @@ public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeVi
         @Override
         public void onClick(View view) {
             onDegreeListener.onDegreeClick(getAdapterPosition());
-            Drawable cur_bg = name.getBackground();
 
-            name.setBackgroundResource(R.drawable.card_select);
+            if(!isDegreeSelected){
+                Log.d("arjun","RUNNING FALSE LOOP");
+                name.setBackgroundResource(R.drawable.card_select);
+                isDegreeSelected = true;
+                Log.d("arjun","Item is selected: " + isDegreeSelected);
+            }else if(isDegreeSelected){
+                Log.d("arjun","RUNNING TRUE LOOP");
+                name.setBackgroundResource(R.drawable.card);
+                isDegreeSelected = false;
+                Log.d("arjun","Item is selected: " + isDegreeSelected);
+            }
+
+
+
 
             Log.d("arjun", "onClick: an item was clicked");
 
