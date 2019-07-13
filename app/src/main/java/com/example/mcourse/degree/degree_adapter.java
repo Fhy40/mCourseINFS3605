@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.mcourse.R;
-
 import java.util.List;
 
 public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeViewHolder> {
