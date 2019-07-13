@@ -1,48 +1,38 @@
 package com.example.mcourse.degree;
 
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mcourse.MainActivity;
 import com.example.mcourse.R;
-import com.example.mcourse.degree_selection;
 
 import java.util.List;
 
 public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeViewHolder> {
     private List<degree> degreeList;
+    private OnDegreeListener mOnDegreeListener;
 
-
-    public degree_adapter(List<degree> beerList) {
-        this.degreeList = beerList;
+    public degree_adapter(List<degree> degreeList, OnDegreeListener onDegreeListener) {
+        this.degreeList = degreeList;
+        this.mOnDegreeListener = onDegreeListener;
     }
 
     @Override
-    public degreeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public degreeViewHolder onCreateViewHolder (ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.degree_list_item, parent, false);
 
-        return new degreeViewHolder(itemView);
+        return new degreeViewHolder(itemView, mOnDegreeListener);
     }
 
     @Override
     public void onBindViewHolder(degreeViewHolder holder, int position) {
         holder.name.setText(degreeList.get(position).getName());
-        holder.itemView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-
-                Log.d("temp", "current selection is " + this.getClass().getName());
-
-            }
-        });
     }
 
     @Override
@@ -50,20 +40,31 @@ public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeVi
         return degreeList.size();
     }
 
-    public class degreeViewHolder extends RecyclerView.ViewHolder {
+    public class degreeViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
         public TextView name;
+        OnDegreeListener onDegreeListener;
 
-
-        public degreeViewHolder(View view) {
+        public degreeViewHolder(View view, OnDegreeListener onDegreeListener) {
             super(view);
             name = (TextView) view.findViewById(R.id.degree_name);
+            this.onDegreeListener = onDegreeListener;
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onDegreeListener.onDegreeClick(getAdapterPosition());
+            Drawable cur_bg = name.getBackground();
+
+            name.setBackgroundResource(R.drawable.card_select);
+
+            Log.d("arjun", "onClick: an item was clicked");
 
         }
     }
 
-    AdapterView.OnItemClickListener onItemClickListener;
-    public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-        Log.d("arjun", "current selection is " + onItemClickListener.toString());
+    public interface OnDegreeListener {
+        void onDegreeClick(int position);
     }
 }
