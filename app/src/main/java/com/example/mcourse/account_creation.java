@@ -29,6 +29,7 @@ import java.util.Map;
 public class account_creation extends AppCompatActivity {
     boolean profile_creation_success;
     boolean account_auth_success;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Button create_profile_button;
@@ -42,6 +43,7 @@ public class account_creation extends AppCompatActivity {
         final EditText dob_input = findViewById(R.id.dob_input);
         final EditText password_input = findViewById(R.id.password_input);
         create_profile_button = (Button) findViewById(R.id.create_profile_button);
+
         final FirebaseFirestore db = FirebaseFirestore.getInstance();
         final FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -52,6 +54,7 @@ public class account_creation extends AppCompatActivity {
 
                 profile_creation_success = false;
                 account_auth_success = false;
+
                 auth.createUserWithEmailAndPassword(email_input.getText().toString(), password_input.getText().toString())
                         .addOnCompleteListener(account_creation.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -59,10 +62,45 @@ public class account_creation extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("arjun", "createUserWithEmail:success");
-                                    FirebaseUser user = auth.getCurrentUser();
+                                    FirebaseUser c_user = auth.getCurrentUser();
                                     account_auth_success = true;
                                     Toast.makeText(account_creation.this, "Authentication Successful.",
                                             Toast.LENGTH_SHORT).show();
+                                    Log.d("arjun", "Was a profile successfully authenticated? = " + account_auth_success);
+
+                                    Map<String, Object> user = new HashMap<>();
+                                    user.put("f_name", fname_input.getText().toString());
+                                    user.put("l_name", lname_input.getText().toString());
+                                    user.put("email", email_input.getText().toString());
+                                    user.put("phone_number", phone_number_input.getText().toString());
+                                    user.put("dob", dob_input.getText().toString());
+                                    user.put("password", password_input.getText().toString());
+                                    user.put("finished_creation", false);
+
+                                    db.collection("users")
+                                            .add(user)
+                                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                @Override
+                                                public void onSuccess(DocumentReference documentReference) {
+                                                    Log.d("arjun", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                    profile_creation_success = true;
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Log.w("arjun", "Error adding document", e);
+                                                    profile_creation_success = false;
+                                                }
+                                            });
+
+                                    Log.d("arjun", "Was a profile successfully authenticated? = " + account_auth_success);
+                                    Log.d("arjun", "Was a profile successfully created? = " + profile_creation_success);
+
+                                    if(profile_creation_success){
+                                        goDegreeSelection();
+                                    }
+
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("arjun", "createUserWithEmail:failure", task.getException());
@@ -74,36 +112,6 @@ public class account_creation extends AppCompatActivity {
                             }
                         });
 
-                Map<String, Object> user = new HashMap<>();
-                user.put("f_name", fname_input.getText().toString());
-                user.put("l_name", lname_input.getText().toString());
-                user.put("email", email_input.getText().toString());
-                user.put("phone_number", phone_number_input.getText().toString());
-                user.put("dob", dob_input.getText().toString());
-                user.put("password", password_input.getText().toString());
-                user.put("finished_creation", false);
-
-
-
-                db.collection("users")
-                        .add(user)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d("arjun", "DocumentSnapshot added with ID: " + documentReference.getId());
-                                profile_creation_success = true;
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w("arjun", "Error adding document", e);
-                                profile_creation_success = false;
-                            }
-                        });
-                if(profile_creation_success && account_auth_success){
-                    goDegreeSelection();
-                }
             }
         });
 

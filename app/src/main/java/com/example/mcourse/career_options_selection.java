@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.example.mcourse.career_selection.career;
 import com.example.mcourse.career_selection.career_adapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -33,6 +36,12 @@ public class career_options_selection extends AppCompatActivity implements caree
     private String career_chosen;
     ArrayList<String> careers_selected = new ArrayList<>();
 
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+    FirebaseFirestore db;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,19 +55,25 @@ public class career_options_selection extends AppCompatActivity implements caree
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db  = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        final String current_user_uid =firebaseUser.getUid();
+
 
         next_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Map<String, Object> cur_careers = new HashMap<>();
                 cur_careers.put("careers", careers_selected);
 
-                db.collection("users").document("YmAMrGhZxmbwdn5i6Q6oZQVsZHw1")
+                db.collection("users").document(current_user_uid)
                         .set(cur_careers, SetOptions.merge())
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Log.d("arjun", "DocumentSnapshot successfully written!");
+                                goCoursePreferenceSelection();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -67,7 +82,7 @@ public class career_options_selection extends AppCompatActivity implements caree
                                 Log.w("arjun", "Error writing document", e);
                             }
                         });
-                //goCareerSelection();
+
             }
         });
 
@@ -85,5 +100,10 @@ public class career_options_selection extends AppCompatActivity implements caree
         }
         Log.d("arjun", "Careers Selected: " + careers_selected);
         next_button.setVisibility(View.VISIBLE);
+    }
+
+    public void goCoursePreferenceSelection() {
+        Intent intent = new Intent(this, course_preference_selection.class);
+        startActivity(intent);
     }
 }

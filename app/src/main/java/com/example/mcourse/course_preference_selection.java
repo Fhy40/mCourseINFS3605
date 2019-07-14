@@ -15,6 +15,8 @@ import com.example.mcourse.course_preference.course_preference;
 import com.example.mcourse.course_preference.course_preference_adapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -32,6 +34,10 @@ public class course_preference_selection extends AppCompatActivity implements co
     private String coursePreference_chosen;
     ArrayList<String> coursePreferences_selected = new ArrayList<>();
 
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+    FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +51,18 @@ public class course_preference_selection extends AppCompatActivity implements co
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db  = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        final String current_user_uid =firebaseUser.getUid();
 
         next_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Map<String, Object> cur_coursePreferences = new HashMap<>();
                 cur_coursePreferences.put("coursePreferences", coursePreferences_selected);
 
-                db.collection("users").document("YmAMrGhZxmbwdn5i6Q6oZQVsZHw1")
+                db.collection("users").document(current_user_uid)
                         .set(cur_coursePreferences, SetOptions.merge())
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
