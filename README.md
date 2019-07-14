@@ -6,10 +6,10 @@ mCourseINFS3605
 Hey Everyone, so this is the repo for our code base so far. It's an Android app. 
 
 Functionality (Ill add/remove items as we go through development):
-  Account Creation
-  Profile Creation
-  Login
-  User Profile Viewing
+  - Account Creation
+  - Profile Creation
+  - Login
+  - User Profile Viewing
 
 How to Install:
   1. Open up Android Studio.
