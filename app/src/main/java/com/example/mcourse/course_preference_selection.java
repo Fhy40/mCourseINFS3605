@@ -1,5 +1,6 @@
 package com.example.mcourse;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,7 +61,7 @@ public class course_preference_selection extends AppCompatActivity implements co
         next_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Map<String, Object> cur_coursePreferences = new HashMap<>();
-                cur_coursePreferences.put("coursePreferences", coursePreferences_selected);
+                cur_coursePreferences.put("course_preferences", coursePreferences_selected);
 
                 db.collection("users").document(current_user_uid)
                         .set(cur_coursePreferences, SetOptions.merge())
@@ -76,7 +77,7 @@ public class course_preference_selection extends AppCompatActivity implements co
                                 Log.w("arjun", "Error writing document", e);
                             }
                         });
-                //goCoursePreferenceSelection();
+                goProfilePage();
             }
         });
 
@@ -95,4 +96,11 @@ public class course_preference_selection extends AppCompatActivity implements co
         Log.d("arjun", "CoursePreferences Selected: " + coursePreferences_selected);
         next_button.setVisibility(View.VISIBLE);
     }
+
+    public void goProfilePage() {
+        Intent intent = new Intent(this, user_profile.class);
+        startActivity(intent);
+    }
+
+
 }

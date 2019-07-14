@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -76,14 +77,20 @@ public class account_creation extends AppCompatActivity {
                                     user.put("dob", dob_input.getText().toString());
                                     user.put("password", password_input.getText().toString());
                                     user.put("finished_creation", false);
+                                    user.put("progress_percentage", 2);
+                                    user.put("certificate_1", "Empty");
+                                    user.put("certificate_2", "Empty");
 
-                                    db.collection("users")
-                                            .add(user)
-                                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    db.collection("users").document(c_user.getUid())
+                                            .set(user, SetOptions.merge())
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
-                                                public void onSuccess(DocumentReference documentReference) {
-                                                    Log.d("arjun", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                                public void onSuccess(Void aVoid) {
+                                                    Log.d("arjun", "DocumentSnapshot successfully written!");
                                                     profile_creation_success = true;
+                                                    if(profile_creation_success){
+                                                        goDegreeSelection();
+                                                    }
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
@@ -97,9 +104,7 @@ public class account_creation extends AppCompatActivity {
                                     Log.d("arjun", "Was a profile successfully authenticated? = " + account_auth_success);
                                     Log.d("arjun", "Was a profile successfully created? = " + profile_creation_success);
 
-                                    if(profile_creation_success){
-                                        goDegreeSelection();
-                                    }
+
 
                                 } else {
                                     // If sign in fails, display a message to the user.
