@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -35,6 +38,7 @@ public class user_profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+        final Button requests_button = findViewById(R.id.requests_button);
         final ImageView profile_picture_imageview = findViewById(R.id.profile_picture_imageview);
         final TextView name_textview = findViewById(R.id.name_textview);
         final TextView degree_textview = findViewById(R.id.degree_textview);
@@ -74,5 +78,21 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
+        requests_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goFriendRequests();
+            }
+        });
+
+    }
+
+    public void goRoadMap() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void goFriendRequests() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
