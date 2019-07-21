@@ -45,7 +45,7 @@ public class requests {
 
     public static ArrayList<requests> getRequests() {
         ArrayList<requests> requestList = new ArrayList<>();
-        requestList.add(new requests("1","Arjun", "Sundram"));
+        requestList.add(new requests("1","Steve", "Jobs"));
         requestList.add(new requests("2","Kendrick", "Lamar"));
 
         return requestList;
