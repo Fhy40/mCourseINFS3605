@@ -49,7 +49,6 @@ public class friend_requests_adapter  extends RecyclerView.Adapter<friend_reques
             super(view);
             name = (TextView) view.findViewById(R.id.requests_name);
             this.onRequestsListener = onRequestsListener;
-
             itemView.setOnClickListener(this);
         }
 

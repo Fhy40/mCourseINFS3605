@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -76,6 +77,7 @@ public class account_creation extends AppCompatActivity {
                                     user.put("phone_number", phone_number_input.getText().toString());
                                     user.put("dob", dob_input.getText().toString());
                                     user.put("password", password_input.getText().toString());
+                                    user.put("timestamp", FieldValue.serverTimestamp());
                                     user.put("finished_creation", false);
                                     user.put("progress_percentage", 2);
                                     user.put("certificate_1", "Empty");
