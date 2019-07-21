@@ -90,7 +90,7 @@ public class user_profile extends AppCompatActivity {
     }
 
     public void goFriendRequests() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, friend_requests.class);
         startActivity(intent);
     }
 }

@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Button signup_button = findViewById(R.id.signup_button);
         final Button login_button = findViewById(R.id.login_button);
+        final Button friend_button = findViewById(R.id.friend_button);
         final EditText email_input = findViewById(R.id.email_input);
         final EditText password_input = findViewById(R.id.password_input);
 
@@ -41,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 goAccountCreation();
+            }
+        });
+
+        friend_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goFriendButton();
             }
         });
 
@@ -82,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goDegreeSelection() {
-        Intent intent = new Intent(this, degree_selection.class);
+    public void goFriendButton() {
+        Intent intent = new Intent(this, friend_requests.class);
         startActivity(intent);
     }
 

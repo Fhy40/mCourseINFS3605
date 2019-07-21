@@ -43,7 +43,7 @@ public class requests {
         this.l_name = l_name;
     }
 
-    public static ArrayList<requests> getRequests() {
+    public static ArrayList<requests> getDummyRequests() {
         ArrayList<requests> requestList = new ArrayList<>();
         requestList.add(new requests("1","Steve", "Jobs"));
         requestList.add(new requests("2","Kendrick", "Lamar"));
