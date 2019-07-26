@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="515dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/daily_weekly_textview"
+        style="@style/normal_text_style_white"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/main_color_oval_bg"
+        android:text="周报"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_dialy_textview"
+        style="@style/normal_text_style_white"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/main_color_oval_bg"
+        android:text="日报"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_monthly_textview"
+        style="@style/normal_text_style_white"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/main_color_oval_bg"
+        android:text="月报"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_weekly_show_textview"
+        style="@style/normal_text_style_white"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/main_color_oval_bg"
+        android:text="周报"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_dialy_show_textview"
+        style="@style/normal_text_style_white"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/main_color_oval_bg"
+        android:text="日报"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_monthly_show_textview"
+        style="@style/normal_text_style_white"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/main_color_oval_bg"
+        android:text="月报"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/t3"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/bg_btn_term_selector"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/t2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_btn_term_selector"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t3" />
+
+    <Button
+        android:id="@+id/t1"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/bg_btn_term_selector"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t2"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

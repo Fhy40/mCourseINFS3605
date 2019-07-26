@@ -19,6 +19,7 @@
         <activity android:name=".course_preference_selection" />
         <activity android:name=".degree_selection" />
         <activity android:name=".account_creation" />
+        <activity android:name=".Main"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
