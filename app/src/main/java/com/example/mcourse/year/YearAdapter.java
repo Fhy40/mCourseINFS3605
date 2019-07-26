@@ -123,7 +123,6 @@ public class YearAdapter extends BaseAdapter {
         dailyUnfoldAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                System.out.println(txtDailyShow.getVisibility() + " ye " + t3.getVisibility());
             }
             @Override
             public void onAnimationRepeat(Animation animation) {
@@ -131,8 +130,6 @@ public class YearAdapter extends BaseAdapter {
             @Override
             public void onAnimationEnd(Animation animation) {
                 txtDailyShow.setVisibility(View.VISIBLE);
-                t3.setVisibility(View.INVISIBLE);
-                System.out.println(txtDailyShow.getVisibility() + " wow " + t3.getVisibility());
             }
         });
         // 收起日报，开始动画时，隐藏起始点控件
@@ -197,7 +194,7 @@ public class YearAdapter extends BaseAdapter {
         });
         // 收起月报
         monthlyFoldAnimation = new TranslateAnimation( Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 0f, Animation.RELATIVE_TO_SELF, 2f, Animation.RELATIVE_TO_SELF, 0f);
-        monthlyFoldAnimation.setDuration(11500);
+        monthlyFoldAnimation.setDuration(1500);
         monthlyFoldAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
