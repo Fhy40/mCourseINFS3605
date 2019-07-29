@@ -6,88 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="515dp"
     android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
     >
 
-    <TextView
-        android:id="@+id/daily_weekly_textview"
-        style="@style/normal_text_style_white"
-        android:layout_width="48dip"
-        android:layout_height="48dip"
 
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="128dp"
-        android:background="@drawable/main_color_oval_bg"
-        android:text="周报"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/daily_dialy_textview"
-        style="@style/normal_text_style_white"
-        android:layout_width="48dip"
-        android:layout_height="48dip"
-
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="128dp"
-        android:background="@drawable/main_color_oval_bg"
-        android:text="日报"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/daily_monthly_textview"
-        style="@style/normal_text_style_white"
-        android:layout_width="48dip"
-        android:layout_height="48dip"
-
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="128dp"
-        android:background="@drawable/main_color_oval_bg"
-        android:text="月报"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/daily_weekly_show_textview"
-        style="@style/normal_text_style_white"
-        android:layout_width="48dip"
-        android:layout_height="48dip"
-
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/main_color_oval_bg"
-        android:text="周报"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/daily_dialy_show_textview"
-        style="@style/normal_text_style_white"
-        android:layout_width="48dip"
-        android:layout_height="48dip"
-
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/main_color_oval_bg"
-        android:text="日报"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/daily_monthly_show_textview"
-        style="@style/normal_text_style_white"
-        android:layout_width="48dip"
-        android:layout_height="48dip"
-
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="128dp"
-        android:background="@drawable/main_color_oval_bg"
-        android:text="月报"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -126,4 +48,106 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t2"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/t3_c3"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBottom_toTopOf="@+id/t3"
+        app:layout_constraintStart_toStartOf="@+id/t3" />
+
+    <Button
+        android:id="@+id/t3_c2"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t3_c3"
+        app:layout_constraintEnd_toStartOf="@+id/t3_c3" />
+
+    <Button
+        android:id="@+id/t3_c1"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t3_c2"
+        app:layout_constraintEnd_toStartOf="@+id/t3_c2" />
+
+    <Button
+        android:id="@+id/t1_c3"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBottom_toTopOf="@+id/t1"
+        app:layout_constraintStart_toStartOf="@+id/t1" />
+
+    <Button
+        android:id="@+id/t1_c2"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t1_c3"
+        app:layout_constraintEnd_toStartOf="@+id/t1_c3" />
+
+    <Button
+        android:id="@+id/t1_c1"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t1_c2"
+        app:layout_constraintEnd_toStartOf="@+id/t1_c2" />
+
+    <Button
+        android:id="@+id/t2_c3"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBottom_toTopOf="@+id/t2"
+        app:layout_constraintEnd_toEndOf="@+id/t2" />
+
+    <Button
+        android:id="@+id/t2_c2"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t2_c3"
+        app:layout_constraintStart_toEndOf="@+id/t2_c3" />
+
+    <Button
+        android:id="@+id/t2_c1"
+        android:background="@drawable/bg_btn_term_1"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="INFS3605"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t2_c2"
+        app:layout_constraintStart_toEndOf="@+id/t2_c2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

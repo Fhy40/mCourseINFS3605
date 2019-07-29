@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mcourse.year.YearAdapter;
 
@@ -35,5 +37,7 @@ public class roadmap extends AppCompatActivity {
         mData.add(new Year("T1","T2","T3"));
         mAdapter = new YearAdapter((LinkedList<Year>) mData, mContext);
         list_year.setAdapter(mAdapter);
+
+
     }
 }
