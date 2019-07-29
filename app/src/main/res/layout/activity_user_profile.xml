@@ -20,19 +20,26 @@
         android:id="@+id/requests_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/mon_bold"
         android:text="Johny Johnson"
+        android:textColor="#001769"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/profile_picture_imageview"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/degree_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/mon_bold"
+        android:maxLines="100"
         android:text="Bachelor of Information Systems"
+        android:textColor="#001769"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/profile_picture_imageview"
         app:layout_constraintTop_toBottomOf="@+id/requests_name" />
 
@@ -40,21 +47,16 @@
         android:id="@+id/connection_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         android:text="See 193 Connections"
+        android:textColor="#001769"
+        android:textSize="18sp"
+        android:fontFamily="@font/mon_bold"
         app:layout_constraintStart_toEndOf="@+id/profile_picture_imageview"
         app:layout_constraintTop_toBottomOf="@+id/degree_textview" />
 
-    <ProgressBar
-        android:id="@+id/progress_percentage_circle"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="159dp"
-        android:layout_height="148dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_textview" />
+
 
     <TextView
         android:id="@+id/progress_textview"
@@ -63,7 +65,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         android:text="Progress:"
+        android:textColor="#001769"
         android:textSize="24sp"
+        android:fontFamily="@font/fira_sb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_picture_imageview" />
 
@@ -74,19 +78,34 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="176dp"
         android:text="70%"
+        android:textColor="#001769"
+        android:textSize="18sp"
+        android:fontFamily="@font/mon_bold"
         app:layout_constraintStart_toEndOf="@+id/progress_percentage_circle"
         app:layout_constraintTop_toBottomOf="@+id/connection_textview" />
 
-    <TextView
-        android:id="@+id/achievements_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:text="Achievements:"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_percentage_circle" />
+    <pl.pawelkleczkowski.customgauge.CustomGauge
+        android:id="@+id/progress_percentage_circle"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="132dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:gaugeEndValue="100"
+        app:gaugePointEndColor="#9DE583"
+        app:gaugePointStartColor="#9DE583"
+        app:gaugeStartAngle="180"
+        app:gaugeStartValue="0"
+        app:gaugeStrokeCap="ROUND"
+        app:gaugeStrokeColor="#673AB7"
+        app:gaugeStrokeWidth="20dp"
+        app:gaugeSweepAngle="360"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_textview" />
 
     <TextView
         android:id="@+id/certificate_one_textview"
@@ -95,6 +114,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:text="BA SAS Certificate"
+        android:textColor="#001769"
+        android:textSize="18sp"
+        android:fontFamily="@font/mon_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/achievements_textview" />
 
@@ -105,28 +127,50 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:text=" Events Commitee (PIAA)"
+        android:textColor="#001769"
+        android:textSize="18sp"
+        android:fontFamily="@font/mon_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/certificate_one_textview" />
 
     <Button
         android:id="@+id/roadmap_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/continue_button"
         android:text="Roadmap"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/certificate_two_textview" />
 
     <Button
         android:id="@+id/requests_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/continue_button"
         android:text="Friends"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/roadmap_button" />
+
+    <TextView
+        android:id="@+id/achievements_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/fira_sb"
+        android:text="Achievements:"
+        android:textColor="#001769"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_percentage_circle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
