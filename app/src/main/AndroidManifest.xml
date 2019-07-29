@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".friend_requests"/>
+        <activity android:name=".friends_page"></activity>
+        <activity android:name=".friend_requests" />
         <activity android:name=".user_profile" />
         <activity android:name=".career_options_selection" />
         <activity android:name=".course_preference_selection" />

@@ -73,7 +73,7 @@ public class friend_requests extends AppCompatActivity implements friend_request
         recyclerView.setAdapter(mAdapter);
 
 
-        
+
     }
 
     @Override

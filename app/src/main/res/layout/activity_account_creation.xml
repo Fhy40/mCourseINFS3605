@@ -8,103 +8,137 @@
 
     <TextView
         android:id="@+id/profile_creation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:text="Create Profile"
+        android:fontFamily="@font/fira_sb"
+        android:textColor="#001769"
+        android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/fname_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="first name"
+        android:hint="First name"
+        android:fontFamily="@font/mon_bold"
+        android:textColorHint="#001769"
+        android:padding="10dp"
+        android:textColor="#001769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_creation" />
 
     <EditText
         android:id="@+id/lname_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="last name"
+        android:fontFamily="@font/mon_bold"
+        android:hint="Last name"
+        android:textColorHint="#001769"
+        android:padding="10dp"
+        android:textColor="#001769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fname_input" />
 
     <EditText
         android:id="@+id/email_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="email"
+        android:hint="E-mail"
+        android:fontFamily="@font/mon_bold"
+        android:textColorHint="#001769"
+        android:textColor="#001769"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lname_input" />
 
     <EditText
         android:id="@+id/dob_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="date of birth"
+        android:hint="Date of Birth"
+        android:fontFamily="@font/mon_bold"
+        android:padding="10dp"
+        android:textColorHint="#001769"
+        android:textColor="#001769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_number_input" />
 
     <EditText
         android:id="@+id/phone_number_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="phone number"
+        android:hint="Phone Number"
+        android:fontFamily="@font/mon_bold"
+        android:padding="10dp"
+        android:textColorHint="#001769"
+        android:textColor="#001769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lname_input" />
 
     <EditText
         android:id="@+id/password_input"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:hint="Please Enter Password"
+        android:fontFamily="@font/mon_bold"
+        android:textColorHint="#001769"
+        android:textColor="#001769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dob_input" />
 
     <EditText
         android:id="@+id/confirm_password_input"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:hint="Please Re-Enter Password"
+        android:fontFamily="@font/mon_bold"
+        android:textColorHint="#001769"
+        android:textColor="#001769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
     <Button
         android:id="@+id/create_profile_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/continue_button"
         android:text="create profile"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirm_password_input" />
 
@@ -117,25 +151,5 @@
         android:text="upload profile picture"
         app:layout_constraintStart_toEndOf="@+id/profile_creation"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/password_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="308dp"
-        android:text="Enter Password"
-        app:layout_constraintStart_toEndOf="@+id/password_input"
-        app:layout_constraintTop_toBottomOf="@+id/image_upload_button" />
-
-    <TextView
-        android:id="@+id/confirm_password_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="364dp"
-        android:text="Confrim Password"
-        app:layout_constraintStart_toEndOf="@+id/confirm_password_input"
-        app:layout_constraintTop_toBottomOf="@+id/image_upload_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

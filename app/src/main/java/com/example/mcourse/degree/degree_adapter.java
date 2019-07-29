@@ -56,12 +56,12 @@ public class degree_adapter extends RecyclerView.Adapter<degree_adapter.degreeVi
 
             if(!isDegreeSelected){
                 Log.d("arjun","RUNNING FALSE LOOP");
-                name.setBackgroundResource(R.drawable.card_select);
+                name.setBackgroundResource(R.drawable.pos_button);
                 isDegreeSelected = true;
                 Log.d("arjun","Item is selected: " + isDegreeSelected);
             }else if(isDegreeSelected){
                 Log.d("arjun","RUNNING TRUE LOOP");
-                name.setBackgroundResource(R.drawable.card);
+                name.setBackgroundResource(R.drawable.back_button);
                 isDegreeSelected = false;
                 Log.d("arjun","Item is selected: " + isDegreeSelected);
             }

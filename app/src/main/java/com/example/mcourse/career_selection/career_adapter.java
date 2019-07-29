@@ -58,12 +58,12 @@ public class career_adapter extends RecyclerView.Adapter<career_adapter.careerVi
 
             if(!isCareerSelected){
                 Log.d("arjun","RUNNING FALSE LOOP");
-                name.setBackgroundResource(R.drawable.card_select);
+                name.setBackgroundResource(R.drawable.pos_button);
                 isCareerSelected = true;
                 Log.d("arjun","Item is selected: " + isCareerSelected);
             }else if(isCareerSelected){
                 Log.d("arjun","RUNNING TRUE LOOP");
-                name.setBackgroundResource(R.drawable.card);
+                name.setBackgroundResource(R.drawable.back_button);
                 isCareerSelected = false;
                 Log.d("arjun","Item is selected: " + isCareerSelected);
             }

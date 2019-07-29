@@ -21,6 +21,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import pl.pawelkleczkowski.customgauge.CustomGauge;
+
 public class user_profile extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
@@ -41,7 +43,7 @@ public class user_profile extends AppCompatActivity {
         final TextView name_textview = findViewById(R.id.requests_name);
         final TextView degree_textview = findViewById(R.id.degree_textview);
         final TextView connection_textview = findViewById(R.id.connection_textview);
-        final ProgressBar progress_percentage_circle = findViewById(R.id.progress_percentage_circle);
+        final CustomGauge progress_percentage_circle = findViewById(R.id.progress_percentage_circle);
         final TextView progress_percentage_textview = findViewById(R.id.progress_percentage_textview);
         final TextView certificate_one_textview = findViewById(R.id.certificate_one_textview);
         final TextView certificate_two_textview = findViewById(R.id.certificate_two_textview);
@@ -59,12 +61,12 @@ public class user_profile extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
                         Log.d("arjun", "DocumentSnapshot data: " + document.getData());
-                        name_textview.setText(document.getString("f_name"));
+                        name_textview.setText(document.getString("f_name") + " " + document.getString("l_name"));
                         degree_textview.setText(document.getString("degree"));
 
                         progress_actual =document.getLong("progress_percentage").toString();
-                        progress_percentage_textview.setText(progress_actual);
-
+                        progress_percentage_textview.setText(progress_actual + "%");
+                        progress_percentage_circle.setValue(document.getLong("progress_percentage").intValue());
                         certificate_one_textview.setText(document.getString("certificate_1"));
                         certificate_two_textview.setText(document.getString("certificate_2"));
                     } else {
@@ -78,7 +80,7 @@ public class user_profile extends AppCompatActivity {
 
         requests_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                goFriendRequests();
+                goFriends();
             }
         });
 
@@ -93,4 +95,10 @@ public class user_profile extends AppCompatActivity {
         Intent intent = new Intent(this, friend_requests.class);
         startActivity(intent);
     }
+
+    public void goFriends() {
+        Intent intent = new Intent(this, friends_page.class);
+        startActivity(intent);
+    }
+
 }

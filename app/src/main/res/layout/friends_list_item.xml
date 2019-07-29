@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/friend_name"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textSize="24sp"
+        android:fontFamily="@font/fira_sb"
+        android:textColor="#001769"
+        android:text="TEMP_NAME"
+        />
+
+    <TextView
+        android:id="@+id/cur_degree_textview"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textSize="18sp"
+        android:textColor="#001769"
+        android:fontFamily="@font/mon_bold"
+        android:text="TEMP_DEGREE" />
+
+    <Button
+        android:id="@+id/roadmap_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/continue_button"
+        android:layout_gravity="right"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:text="Roadmap" />
+
+</LinearLayout>

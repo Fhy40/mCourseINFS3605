@@ -58,18 +58,15 @@ public class course_preference_adapter extends RecyclerView.Adapter<course_prefe
 
             if(!isCoursePreferenceSelected){
                 Log.d("arjun","RUNNING FALSE LOOP");
-                name.setBackgroundResource(R.drawable.card_select);
+                name.setBackgroundResource(R.drawable.pos_button);
                 isCoursePreferenceSelected = true;
                 Log.d("arjun","Item is selected: " + isCoursePreferenceSelected);
             }else if(isCoursePreferenceSelected){
                 Log.d("arjun","RUNNING TRUE LOOP");
-                name.setBackgroundResource(R.drawable.card);
+                name.setBackgroundResource(R.drawable.back_button);
                 isCoursePreferenceSelected = false;
                 Log.d("arjun","Item is selected: " + isCoursePreferenceSelected);
             }
-
-
-
 
             Log.d("arjun", "onClick: an item was clicked");
 
