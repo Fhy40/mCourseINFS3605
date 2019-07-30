@@ -87,7 +87,7 @@ public class user_profile extends AppCompatActivity {
     }
 
     public void goRoadMap() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, roadmap.class);
         startActivity(intent);
     }
 
