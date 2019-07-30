@@ -173,4 +173,5 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_percentage_circle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
