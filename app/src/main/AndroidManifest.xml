@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.mcourse">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <dist:module dist:instant="true" />
 
     <application
@@ -20,6 +20,7 @@
         <activity android:name=".degree_selection" />
         <activity android:name=".account_creation" />
         <activity android:name=".roadmap" />
+        <activity android:name=".career_preference" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
