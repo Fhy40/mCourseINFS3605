@@ -39,6 +39,7 @@ public class user_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         final Button requests_button = findViewById(R.id.requests_button);
+        final Button roadmap_button = findViewById(R.id.roadmap_button);
         final ImageView profile_picture_imageview = findViewById(R.id.profile_picture_imageview);
         final TextView name_textview = findViewById(R.id.requests_name);
         final TextView degree_textview = findViewById(R.id.degree_textview);
@@ -81,6 +82,12 @@ public class user_profile extends AppCompatActivity {
         requests_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 goFriends();
+            }
+        });
+
+        roadmap_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goRoadMap();
             }
         });
 
