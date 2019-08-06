@@ -43,6 +43,12 @@ public class YearAdapter extends BaseAdapter  {
     private boolean t2_c1_selected = false;
     private boolean t3_c2_selected = false;
 
+    private boolean switch_selected = false;
+    private boolean view_selected = false;
+
+    private String temp = null;
+    private Button btn_temp = null;
+    private int count = 0;
 
 
 
@@ -75,6 +81,9 @@ public class YearAdapter extends BaseAdapter  {
         final Handler handler = new Handler();
 
         final ProgressBar pb = (ProgressBar) view.findViewById(R.id.pb);
+
+        final Button btn_switch = (Button) view.findViewById(R.id.btn_switch);
+        final Button btn_view = (Button) view.findViewById(R.id.btn_view);
 
         final Button t2_c3 = (Button) view.findViewById(R.id.t2_c3);
         final Button t2_c2 = (Button) view.findViewById(R.id.t2_c2);
@@ -165,266 +174,482 @@ public class YearAdapter extends BaseAdapter  {
             }
         });
 
+        btn_switch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch_selected = true;
+                view_selected = false;
+                btn_switch.setBackgroundResource(R.drawable.bg_btn_set_selected);
+                btn_view.setBackgroundResource(R.drawable.bg_btn_set_selector);
+            }
+        });
+
+        btn_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch_selected = false;
+                view_selected = true;
+                btn_view.setBackgroundResource(R.drawable.bg_btn_set_selected);
+                btn_switch.setBackgroundResource(R.drawable.bg_btn_set_selector);
+                t1_c1_selected = false;
+                t1_c3_selected = false;
+                t2_c1_selected = false;
+                t1_c1_selected = false;
+                t3_c2_selected = false;
+                t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t1_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t2_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t2_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t3_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                t3_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+
+                count = 0;
+                temp = null;
+                btn_temp = null;
+            }
+        });
+
+
         t1_c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                t1_c1_selected = true;
-                t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selected);
-                if (t1_c1_selected && t3_c2_selected) {
-                    final AlertDialog.Builder normalDialog =
-                            new AlertDialog.Builder(view.getContext());
-                    normalDialog.setTitle("Warning");
-                    normalDialog.setMessage("INFS1602 is a prerequisite course for many courses, and moving it to later will affect many courses. Do you want to continue?");
-                    normalDialog.setPositiveButton("Yep",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    pb.setVisibility(View.VISIBLE);
-                                    handler.postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            try {
-                                                pb.setVisibility(View.GONE); // 隐藏
-                                                t1_c1_selected = false;
-                                                t3_c2_selected = false;
-                                                t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                                t1_c1.setText("MATH1131");
-                                                t1_c2.setText("MGMT1001");
-                                                t1_c3.setText("ECON1101");
-                                                t2_c1.setText("ACCT1501");
-                                                t2_c2.setText("INFS1603");
-                                                t2_c3.setText("MATH1041");
-                                                t3_c1.setText("GENC2411");
-                                                t3_c2.setText("INFS1602");
-                                                t3_c3.setText("COMP1511");
-                                                Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
-                                                toast.show();
-                                            } catch (Exception e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    }, 2000);
-                                }
-                            });
-                    normalDialog.setNegativeButton("Cancel",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Toast toast = Toast.makeText(view.getContext(), "No changes are completed" , Toast.LENGTH_LONG);
-                                    toast.show();
-                                }
-                            });
-                    // 显示
-                    normalDialog.show();
-
-
+                if(view_selected) {
 
                 }
+                if(switch_selected) {
+                    t1_c1_selected = true;
+                    t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selected);
+
+                    if (t1_c1_selected && t3_c2_selected) {
+                        final AlertDialog.Builder normalDialog =
+                                new AlertDialog.Builder(view.getContext());
+                        normalDialog.setTitle("Warning");
+                        normalDialog.setMessage("INFS1602 is a prerequisite course for many courses, and moving it to later will affect many courses. Do you want to continue?");
+                        normalDialog.setPositiveButton("Yep",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        pb.setVisibility(View.VISIBLE);
+                                        handler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    pb.setVisibility(View.GONE); // 隐藏
+                                                    t1_c1_selected = false;
+                                                    t3_c2_selected = false;
+                                                    t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                                    t1_c1.setText("MATH1131");
+                                                    t1_c2.setText("MGMT1001");
+                                                    t1_c3.setText("ECON1101");
+                                                    t2_c1.setText("ACCT1501");
+                                                    t2_c2.setText("INFS1603");
+                                                    t2_c3.setText("MATH1041");
+                                                    t3_c1.setText("GENC2411");
+                                                    t3_c2.setText("INFS1602");
+                                                    t3_c3.setText("COMP1511");
+                                                    Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
+                                                    toast.show();
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }, 2000);
+                                    }
+                                });
+                        normalDialog.setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Toast toast = Toast.makeText(view.getContext(), "No changes are completed" , Toast.LENGTH_LONG);
+                                        toast.show();
+                                    }
+                                });
+                        // 显示
+                        normalDialog.show();
+
+
+
+                    }
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t1_c1.getText();
+                        btn_temp = t1_c1;
+                    } else if (count == 2) {
+                        btn_temp.setText(t1_c1.getText());
+                        t1_c1.setText(temp);
+                        t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
+                }
+
             }
         });
 
         t1_c2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                t1_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                if(switch_selected) {
+                    t1_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t1_c2.getText();
+                        btn_temp = t1_c2;
+                    } else if (count == 2) {
+                        btn_temp.setText(t1_c2.getText());
+                        t1_c2.setText(temp);
+                        t1_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
+                }
             }
         });
         t1_c3.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(final View view) {
-                t1_c3_selected = true;
-                t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selected);
-                if(t1_c3_selected & t3_c2_selected) {
-                    pb.setVisibility(View.VISIBLE);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                pb.setVisibility(View.GONE); // 隐藏
-                                t1_c3_selected = false;
-                                t3_c2_selected = false;
-                                t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                t1_c1.setText("COMP1511");
-                                t1_c2.setText("MGMT1001");
-                                t1_c3.setText("INFS1602");
-                                t2_c1.setText("MATH1041");
-                                t2_c2.setText("INFS1603");
-                                t2_c3.setText("INFS1609");
-                                t3_c1.setText("INFS2621");
-                                t3_c2.setText("ECON1101");
-                                t3_c3.setText("MATH1131");
-                                Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
-                                toast.show();
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                if(switch_selected) {
+                    t1_c3_selected = true;
+                    t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selected);
+
+                    if(t1_c3_selected & t3_c2_selected) {
+                        pb.setVisibility(View.VISIBLE);
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    pb.setVisibility(View.GONE); // 隐藏
+                                    t1_c3_selected = false;
+                                    t3_c2_selected = false;
+                                    t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    t1_c1.setText("COMP1511");
+                                    t1_c2.setText("MGMT1001");
+                                    t1_c3.setText("INFS1602");
+                                    t2_c1.setText("MATH1041");
+                                    t2_c2.setText("INFS1603");
+                                    t2_c3.setText("INFS1609");
+                                    t3_c1.setText("INFS2621");
+                                    t3_c2.setText("ECON1101");
+                                    t3_c3.setText("MATH1131");
+                                    Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
+                                    toast.show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                    }, 2000);
+                        }, 2000);
+                    }
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t1_c3.getText();
+                        btn_temp = t1_c3;
+                    } else if (count == 2) {
+                        btn_temp.setText(t1_c3.getText());
+                        t1_c3.setText(temp);
+                        t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
                 }
+
             }
         });
         t2_c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                t2_c1_selected = true;
-                t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selected);
-                if (t2_c1_selected && t3_c2_selected) {
-                    pb.setVisibility(View.VISIBLE);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                pb.setVisibility(View.GONE); // 隐藏
-                                t2_c1_selected = false;
-                                t3_c2_selected = false;
-                                t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                Toast toast = Toast.makeText(view.getContext(), "Failed to move...\nINFS1602 is not offered in term 2" , Toast.LENGTH_LONG);
-                                toast.show();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }, 1000);
+                if(switch_selected) {
+                    t2_c1_selected = true;
+                    t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selected);
 
+                    if (t2_c1_selected && t3_c2_selected) {
+                        pb.setVisibility(View.VISIBLE);
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    pb.setVisibility(View.GONE); // 隐藏
+                                    t2_c1_selected = false;
+                                    t3_c2_selected = false;
+                                    t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    Toast toast = Toast.makeText(view.getContext(), "Failed to move...\nINFS1602 is not offered in term 2" , Toast.LENGTH_LONG);
+                                    toast.show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, 1000);
+
+                    }
+
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t2_c1.getText();
+                        btn_temp = t2_c1;
+                    } else if (count == 2) {
+                        btn_temp.setText(t2_c1.getText());
+                        t2_c1.setText(temp);
+                        t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
                 }
+
 
             }
         });
         t2_c2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                t2_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                if(switch_selected) {
+                    t2_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t2_c2.getText();
+                        btn_temp = t2_c2;
+                    } else if (count == 2) {
+                        btn_temp.setText(t2_c2.getText());
+                        t2_c2.setText(temp);
+                        t2_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
+                }
+
             }
         });
         t2_c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                t2_c3.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                if(switch_selected) {
+                    t2_c3.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t2_c3.getText();
+                        btn_temp = t2_c3;
+                    } else if (count == 2) {
+                        btn_temp.setText(t2_c3.getText());
+                        t2_c3.setText(temp);
+                        t2_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
+                }
+
 
             }
         });
         t3_c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(switch_selected) {
+                    t3_c1.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t3_c1.getText();
+                        btn_temp = t3_c1;
+                    } else if (count == 2) {
+                        btn_temp.setText(t3_c1.getText());
+                        t3_c1.setText(temp);
+                        t3_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
+                }
 
-                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
 
             }
         });
         t3_c2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                t3_c2_selected = true;
-                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
-                if (t2_c1_selected && t3_c2_selected) {
-                    pb.setVisibility(View.VISIBLE);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                pb.setVisibility(View.GONE); // 隐藏
-                                t2_c1_selected = false;
-                                t3_c2_selected = false;
-                                t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                Toast toast = Toast.makeText(view.getContext(), "Failed to move...\nINFS1602 is not offered in term 2" , Toast.LENGTH_LONG);
-                                toast.show();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }, 1000);
+                if(switch_selected) {
+                    t3_c2_selected = true;
+                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selected);
 
-                }
-                if(t1_c3_selected & t3_c2_selected) {
-                    pb.setVisibility(View.VISIBLE);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                pb.setVisibility(View.GONE); // 隐藏
-                                t1_c3_selected = false;
-                                t3_c2_selected = false;
-                                t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                t1_c1.setText("COMP1511");
-                                t1_c2.setText("MGMT1001");
-                                t1_c3.setText("INFS1602");
-                                t2_c1.setText("MATH1041");
-                                t2_c2.setText("INFS1603");
-                                t2_c3.setText("INFS1609");
-                                t3_c1.setText("INFS2621");
-                                t3_c2.setText("ECON1101");
-                                t3_c3.setText("MATH1131");
-                                Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
-                                toast.show();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }, 2000);
-                }
-                if (t1_c1_selected && t3_c2_selected) {
-                    final AlertDialog.Builder normalDialog =
-                            new AlertDialog.Builder(view.getContext());
-                    normalDialog.setTitle("Warning");
-                    normalDialog.setMessage("INFS1602 is a prerequisite course for many courses, and moving it to later will affect many courses. Do you want to continue?");
-                    normalDialog.setPositiveButton("Yep",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    pb.setVisibility(View.VISIBLE);
-                                    handler.postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            try {
-                                                pb.setVisibility(View.GONE); // 隐藏
-                                                t1_c1_selected = false;
-                                                t3_c2_selected = false;
-                                                t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                                t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
-                                                t1_c1.setText("MATH1131");
-                                                t1_c2.setText("MGMT1001");
-                                                t1_c3.setText("ECON1101");
-                                                t2_c1.setText("ACCT1501");
-                                                t2_c2.setText("INFS1603");
-                                                t2_c3.setText("MATH1041");
-                                                t3_c1.setText("GENC2411");
-                                                t3_c2.setText("INFS1602");
-                                                t3_c3.setText("COMP1511");
-                                                Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
-                                                toast.show();
-                                            } catch (Exception e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    }, 2000);
-                                }
-                            });
-                    normalDialog.setNegativeButton("Cancel",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Toast toast = Toast.makeText(view.getContext(), "No changes are completed" , Toast.LENGTH_LONG);
+                    if (t2_c1_selected && t3_c2_selected) {
+                        pb.setVisibility(View.VISIBLE);
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    pb.setVisibility(View.GONE); // 隐藏
+                                    t2_c1_selected = false;
+                                    t3_c2_selected = false;
+                                    t2_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    Toast toast = Toast.makeText(view.getContext(), "Failed to move...\nINFS1602 is not offered in term 2" , Toast.LENGTH_LONG);
                                     toast.show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
-                            });
-                    // 显示
-                    normalDialog.show();
+                            }
+                        }, 1000);
+
+                    }
+                    if(t1_c3_selected & t3_c2_selected) {
+                        pb.setVisibility(View.VISIBLE);
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    pb.setVisibility(View.GONE); // 隐藏
+                                    t1_c3_selected = false;
+                                    t3_c2_selected = false;
+                                    t1_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                    t1_c1.setText("COMP1511");
+                                    t1_c2.setText("MGMT1001");
+                                    t1_c3.setText("INFS1602");
+                                    t2_c1.setText("MATH1041");
+                                    t2_c2.setText("INFS1603");
+                                    t2_c3.setText("INFS1609");
+                                    t3_c1.setText("INFS2621");
+                                    t3_c2.setText("ECON1101");
+                                    t3_c3.setText("MATH1131");
+                                    Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
+                                    toast.show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, 2000);
+                    }
+                    if (t1_c1_selected && t3_c2_selected) {
+                        final AlertDialog.Builder normalDialog =
+                                new AlertDialog.Builder(view.getContext());
+                        normalDialog.setTitle("Warning");
+                        normalDialog.setMessage("INFS1602 is a prerequisite course for many courses, and moving it to later will affect many courses. Do you want to continue?");
+                        normalDialog.setPositiveButton("Yep",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        pb.setVisibility(View.VISIBLE);
+                                        handler.postDelayed(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                try {
+                                                    pb.setVisibility(View.GONE); // 隐藏
+                                                    t1_c1_selected = false;
+                                                    t3_c2_selected = false;
+                                                    t1_c1.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                                    t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                                                    t1_c1.setText("MATH1131");
+                                                    t1_c2.setText("MGMT1001");
+                                                    t1_c3.setText("ECON1101");
+                                                    t2_c1.setText("ACCT1501");
+                                                    t2_c2.setText("INFS1603");
+                                                    t2_c3.setText("MATH1041");
+                                                    t3_c1.setText("GENC2411");
+                                                    t3_c2.setText("INFS1602");
+                                                    t3_c3.setText("COMP1511");
+                                                    Toast toast = Toast.makeText(view.getContext(), "Roadmap has been successfully updated!" , Toast.LENGTH_LONG);
+                                                    toast.show();
+                                                } catch (Exception e) {
+                                                    e.printStackTrace();
+                                                }
+                                            }
+                                        }, 2000);
+                                    }
+                                });
+                        normalDialog.setNegativeButton("Cancel",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Toast toast = Toast.makeText(view.getContext(), "No changes are completed" , Toast.LENGTH_LONG);
+                                        toast.show();
+                                    }
+                                });
+                        // 显示
+                        normalDialog.show();
 
 
 
+                    }
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t3_c2.getText();
+                        btn_temp = t3_c2;
+                    } else if (count == 2) {
+                        btn_temp.setText(t3_c2.getText());
+                        t3_c2.setText(temp);
+                        t3_c2.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
                 }
+
             }
         });
         t3_c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                t3_c3.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                if(switch_selected) {
+                    t3_c3.setBackgroundResource(R.drawable.bg_btn_course_selected);
+                    count++;
+                    if(count == 1) {
+                        temp = (String)t3_c3.getText();
+                        btn_temp = t3_c3;
+                    } else if (count == 2) {
+                        btn_temp.setText(t3_c3.getText());
+                        t3_c3.setText(temp);
+                        t3_c3.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        btn_temp.setBackgroundResource(R.drawable.bg_btn_course_selector);
+                        count = 0;
+                        btn_temp = null;
+                        t1_c1_selected = false;
+                        t1_c3_selected = false;
+                        t2_c1_selected = false;
+                        t3_c2_selected = false;
+                    }
+                }
+
             }
         });
 

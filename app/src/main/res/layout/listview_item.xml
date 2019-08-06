@@ -24,6 +24,9 @@
 
     <Button
         android:id="@+id/t3"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="#7030DD"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="108dp"
@@ -37,6 +40,9 @@
 
     <Button
         android:id="@+id/t2"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="#7030DD"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="16dp"
@@ -47,6 +53,9 @@
 
     <Button
         android:id="@+id/t1"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="#7030DD"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginTop="43dp"
@@ -60,11 +69,13 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:id="@+id/t3_c3"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="INFS2608"
@@ -73,10 +84,12 @@
 
     <Button
         android:id="@+id/t3_c2"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="MATH1131"
         app:layout_constraintBaseline_toBaselineOf="@+id/t3_c3"
@@ -84,10 +97,12 @@
 
     <Button
         android:id="@+id/t3_c1"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="INFS2621"
         app:layout_constraintBaseline_toBaselineOf="@+id/t3_c2"
@@ -95,10 +110,12 @@
 
     <Button
         android:id="@+id/t1_c3"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:text="ECON1101"
@@ -107,10 +124,12 @@
 
     <Button
         android:id="@+id/t1_c2"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="MGMT1001"
         app:layout_constraintBaseline_toBaselineOf="@+id/t1_c3"
@@ -118,10 +137,12 @@
 
     <Button
         android:id="@+id/t1_c1"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="INFS1602"
         app:layout_constraintBaseline_toBaselineOf="@+id/t1_c2"
@@ -129,22 +150,26 @@
 
     <Button
         android:id="@+id/t2_c3"
-        android:background="@drawable/bg_btn_course_selector"
-        android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_btn_course_selector"
         android:text="MATH1041"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/t2"
-        app:layout_constraintEnd_toEndOf="@+id/t2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/t2_c2"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="INFS1603"
         app:layout_constraintBaseline_toBaselineOf="@+id/t2_c3"
@@ -152,13 +177,41 @@
 
     <Button
         android:id="@+id/t2_c1"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_height="40dp"
         android:background="@drawable/bg_btn_course_selector"
         android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="INFS1609"
         app:layout_constraintBaseline_toBaselineOf="@+id/t2_c2"
         app:layout_constraintStart_toEndOf="@+id/t2_c2" />
+
+    <Button
+        android:id="@+id/btn_switch"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="SWITCH COURSES"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="@drawable/bg_btn_set_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_btn_set_selector"
+        android:text="VIEW COURSES"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_switch"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
