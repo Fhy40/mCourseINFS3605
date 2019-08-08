@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".course_web_activity"></activity>
+        <activity android:name=".current_events"></>
         <activity android:name=".friends_page" />
         <activity android:name=".friend_requests" />
         <activity android:name=".user_profile" />
