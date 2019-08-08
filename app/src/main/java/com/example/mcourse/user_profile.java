@@ -79,6 +79,13 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
+        roadmap_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goRoadMap();
+            }
+        });
+
         requests_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 goFriends();

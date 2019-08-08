@@ -4,12 +4,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mcourse.R;
 import com.example.mcourse.friend_request.friend_requests_adapter;
+import com.example.mcourse.roadmap;
 
 import java.util.List;
 
@@ -43,6 +45,7 @@ public class friends_adapter extends RecyclerView.Adapter<friends_adapter.friend
     public class friendsViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
         public TextView name;
         public TextView degree;
+        public Button roadmap;
         OnFriendListener onFriendListener;
         private boolean isFriendSelected = false;
 
@@ -50,6 +53,7 @@ public class friends_adapter extends RecyclerView.Adapter<friends_adapter.friend
             super(view);
             name = (TextView) view.findViewById(R.id.friend_name);
             degree = (TextView) view.findViewById(R.id.cur_degree_textview);
+            roadmap = (Button) view.findViewById(R.id.roadmap_button);
             this.onFriendListener = onFriendListener;
             itemView.setOnClickListener(this);
         }
