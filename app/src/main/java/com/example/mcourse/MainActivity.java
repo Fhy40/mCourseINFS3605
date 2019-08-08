@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goFriendButton() {
-        Intent intent = new Intent(this, friend_requests.class);
+        Intent intent = new Intent(this, current_events.class);
         startActivity(intent);
     }
 
