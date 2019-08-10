@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.chen.wakehao.library:bottom-navigation-bar:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71178df40ecd30eb359ce422062ef9e6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71178df40ecd30eb359ce422062ef9e6/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.chen.wakehao.library/bottom-navigation-bar/1.0.0/bed9256b2f2834fc4b848d97985fba81b2dadfb6/bottom-navigation-bar-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

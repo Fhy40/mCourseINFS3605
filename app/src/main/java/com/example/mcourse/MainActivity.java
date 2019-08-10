@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goAccountCreation() {
-        Intent intent = new Intent(this, account_creation.class);
+        Intent intent = new Intent(this, user_profile.class);
         startActivity(intent);
     }
 
