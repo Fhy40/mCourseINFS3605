@@ -51,6 +51,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 app:srcCompat="@drawable/event_3" />
+
+            <ImageView
+                android:id="@+id/event_4"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                app:srcCompat="@drawable/event_3" />
+
+            <ImageView
+                android:id="@+id/event_5"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                app:srcCompat="@drawable/event_3" />
         </LinearLayout>
 
 
