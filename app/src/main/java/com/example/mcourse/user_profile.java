@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.mcourse.friends.friend;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,9 +29,6 @@ public class user_profile extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseFirestore db;
     String progress_actual;
-    private Button road;
-    private Button event;
-    private Button friend;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
@@ -52,7 +48,6 @@ public class user_profile extends AppCompatActivity {
         final TextView progress_percentage_textview = findViewById(R.id.progress_percentage_textview);
         final TextView certificate_one_textview = findViewById(R.id.certificate_one_textview);
         final TextView certificate_two_textview = findViewById(R.id.certificate_two_textview);
-
 
         db  = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -94,41 +89,6 @@ public class user_profile extends AppCompatActivity {
         requests_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 goFriends();
-            }
-        });
-
-        road = findViewById(R.id.road_button);
-        event = findViewById(R.id.event_button);
-        friend = findViewById(R.id.friend_button);
-
-        road.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                road.setBackgroundResource(R.drawable.road_selected);
-                event.setBackgroundResource(R.drawable.event_unselected);
-                friend.setBackgroundResource(R.drawable.friend_unselected);
-                Intent intent = new Intent(user_profile.this, roadmap.class);
-                startActivity(intent);
-            }
-        });
-        event.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                event.setBackgroundResource(R.drawable.event_selected);
-                road.setBackgroundResource(R.drawable.road_unselected);
-                friend.setBackgroundResource(R.drawable.friend_unselected);
-                Intent intent = new Intent(user_profile.this, roadmap.class);
-                startActivity(intent);
-            }
-        });
-        friend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                friend.setBackgroundResource(R.drawable.friend_selected);
-                road.setBackgroundResource(R.drawable.road_unselected);
-                event.setBackgroundResource(R.drawable.event_unselected);
-                Intent intent = new Intent(user_profile.this, friends_page.class);
-                startActivity(intent);
             }
         });
 
