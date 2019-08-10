@@ -29,6 +29,9 @@ public class user_profile extends AppCompatActivity {
     FirebaseUser firebaseUser;
     FirebaseFirestore db;
     String progress_actual;
+    private Button road;
+    private Button event;
+    private Button friends;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
@@ -92,9 +95,38 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
-        roadmap_button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                goRoadMap();
+        road = findViewById(R.id.road_button);
+        event = findViewById(R.id.event_button);
+        friends = findViewById(R.id.friend_button);
+
+        road.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                road.setBackgroundResource(R.drawable.road_selected);
+                event.setBackgroundResource(R.drawable.event_unselected);
+                friends.setBackgroundResource(R.drawable.friend_unselected);
+                Intent intent = new Intent(user_profile.this, roadmap.class);
+                startActivity(intent);
+            }
+        });
+        event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                event.setBackgroundResource(R.drawable.event_selected);
+                road.setBackgroundResource(R.drawable.road_unselected);
+                friends.setBackgroundResource(R.drawable.friend_unselected);
+                Intent intent = new Intent(user_profile.this, roadmap.class);
+                startActivity(intent);
+            }
+        });
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                friends.setBackgroundResource(R.drawable.friend_selected);
+                road.setBackgroundResource(R.drawable.road_unselected);
+                event.setBackgroundResource(R.drawable.event_unselected);
+                Intent intent = new Intent(user_profile.this, friends_page.class);
+                startActivity(intent);
             }
         });
 
