@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: pl.pawelkleczkowski.customgauge:CustomGauge:1.0.3@aar">
     <CLASSES>
-      <root url="jar://D:/Applications/Android/Gradle/caches/transforms-2/files-2.1/b03c26b7031e62261a0e1160e1b9a64d/jars/classes.jar!/" />
-      <root url="file://D:/Applications/Android/Gradle/caches/transforms-2/files-2.1/b03c26b7031e62261a0e1160e1b9a64d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2f0909018ab8ece4ca08945beb79e22e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2f0909018ab8ece4ca08945beb79e22e/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://D:/Applications/Android/Gradle/caches/modules-2/files-2.1/pl.pawelkleczkowski.customgauge/CustomGauge/1.0.3/f15be117831bc3741f883cc1b66943a51e936441/CustomGauge-1.0.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pl.pawelkleczkowski.customgauge/CustomGauge/1.0.3/f15be117831bc3741f883cc1b66943a51e936441/CustomGauge-1.0.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
