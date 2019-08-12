@@ -36,20 +36,23 @@ public class course_preference {
 
     public static ArrayList<course_preference> getCoursePreferences() {
         ArrayList<course_preference> CoursePreferenceList = new ArrayList<>();
-        CoursePreferenceList.add(new course_preference("1","Project Management"));
-        CoursePreferenceList.add(new course_preference("2","Java"));
-        CoursePreferenceList.add(new course_preference("3","Python"));
-        CoursePreferenceList.add(new course_preference("4","Enterprise Systems"));
-        CoursePreferenceList.add(new course_preference("5","Cyber Security"));
-        CoursePreferenceList.add(new course_preference("6","Social Media"));
-        CoursePreferenceList.add(new course_preference("7","Design Thinking"));
-        CoursePreferenceList.add(new course_preference("8","Database Management"));
-        CoursePreferenceList.add(new course_preference("9","Technology Management"));
-        CoursePreferenceList.add(new course_preference("10","Transformation in Business"));
-        CoursePreferenceList.add(new course_preference("11","Analytics"));
-        CoursePreferenceList.add(new course_preference("12","App Development"));
-        CoursePreferenceList.add(new course_preference("13","Network"));
-        CoursePreferenceList.add(new course_preference("14","System Analyst"));
+        CoursePreferenceList.add(new course_preference("1","I am new to UNSW"));
+        CoursePreferenceList.add(new course_preference("2","ACCT1501"));
+        CoursePreferenceList.add(new course_preference("3","MGMT1001"));
+        CoursePreferenceList.add(new course_preference("4","ECON1203"));
+        CoursePreferenceList.add(new course_preference("5","MATH1401"));
+        CoursePreferenceList.add(new course_preference("6","INFS1603"));
+        CoursePreferenceList.add(new course_preference("7","INFS1609"));
+        CoursePreferenceList.add(new course_preference("8","INFS2603"));
+        CoursePreferenceList.add(new course_preference("9","INFS2605"));
+        CoursePreferenceList.add(new course_preference("10","INFS2608"));
+        CoursePreferenceList.add(new course_preference("11","INFS2621"));
+        CoursePreferenceList.add(new course_preference("12","INFS3603"));
+        CoursePreferenceList.add(new course_preference("13","INFS3634"));
+        CoursePreferenceList.add(new course_preference("14","INFS3830"));
+        CoursePreferenceList.add(new course_preference("15","INFS3617"));
+        CoursePreferenceList.add(new course_preference("16","INFS3605"));
+        CoursePreferenceList.add(new course_preference("17","INFS3837"));
         return CoursePreferenceList;
     }
 }

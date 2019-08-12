@@ -16,9 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FieldValue;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Button signup_button = findViewById(R.id.signup_button);
         final Button login_button = findViewById(R.id.login_button);
-        final Button friend_button = findViewById(R.id.friend_button);
         final EditText email_input = findViewById(R.id.email_input);
         final EditText password_input = findViewById(R.id.password_input);
 
@@ -45,11 +41,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        friend_button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                goFriendButton();
-            }
-        });
 
         login_button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

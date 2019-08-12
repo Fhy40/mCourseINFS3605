@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.mcourse.friend_request.friend_requests_adapter;
 import com.example.mcourse.friends.friend;
 import com.example.mcourse.friends.friends_adapter;
 import com.google.firebase.auth.FirebaseAuth;

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".course_preference_selection">
 
     <Button
@@ -38,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Course Preference Selection"
+        android:text="Your Courses"
         android:textColor="#001769"
         android:fontFamily="@font/fira_sb"
         android:textSize="36sp"
