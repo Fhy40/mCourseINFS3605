@@ -70,7 +70,7 @@ public class friends_page extends AppCompatActivity implements friends_adapter.O
                 event.setBackgroundResource(R.drawable.event_selected);
                 road.setBackgroundResource(R.drawable.road_unselected);
                 friends.setBackgroundResource(R.drawable.friend_unselected);
-                Intent intent = new Intent(friends_page.this, roadmap.class);
+                Intent intent = new Intent(friends_page.this, current_events.class);
                 startActivity(intent);
             }
         });

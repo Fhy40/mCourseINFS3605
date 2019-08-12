@@ -96,7 +96,7 @@ public class friend_requests extends AppCompatActivity implements friend_request
                 event.setBackgroundResource(R.drawable.event_selected);
                 road.setBackgroundResource(R.drawable.road_unselected);
                 friends.setBackgroundResource(R.drawable.friend_unselected);
-                Intent intent = new Intent(friend_requests.this, roadmap.class);
+                Intent intent = new Intent(friend_requests.this, current_events.class);
                 startActivity(intent);
             }
         });
