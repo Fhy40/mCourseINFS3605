@@ -59,7 +59,7 @@ public class roadmap extends AppCompatActivity {
                 event.setBackgroundResource(R.drawable.event_selected);
                 road.setBackgroundResource(R.drawable.road_unselected);
                 friend.setBackgroundResource(R.drawable.friend_unselected);
-                Intent intent = new Intent(roadmap.this, roadmap.class);
+                Intent intent = new Intent(roadmap.this, current_events.class);
                 startActivity(intent);
             }
         });

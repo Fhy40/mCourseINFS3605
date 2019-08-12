@@ -80,12 +80,12 @@ public class user_profile extends AppCompatActivity {
             }
         });
 
-        roadmap_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goRoadMap();
-            }
-        });
+//        roadmap_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goRoadMap();
+//            }
+//        });
 
 
         road = findViewById(R.id.road_button);
@@ -108,7 +108,7 @@ public class user_profile extends AppCompatActivity {
                 event.setBackgroundResource(R.drawable.event_selected);
                 road.setBackgroundResource(R.drawable.road_unselected);
                 friends.setBackgroundResource(R.drawable.friend_unselected);
-                Intent intent = new Intent(user_profile.this, roadmap.class);
+                Intent intent = new Intent(user_profile.this, current_events.class);
                 startActivity(intent);
             }
         });
