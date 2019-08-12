@@ -137,7 +137,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/continue_button"
-        android:text="create profile"
+        android:text="Continue"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
